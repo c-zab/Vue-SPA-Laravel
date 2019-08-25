@@ -21,6 +21,11 @@ export default {
       component: page('auth/register.vue')
     },
     {
+      path: '/home',
+      name: 'home',
+      component: page('Home.vue')
+    },
+    {
       path: '*',
       component: page('NotFound.vue')
     }

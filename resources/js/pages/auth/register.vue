@@ -8,6 +8,23 @@
           @submit.prevent="register"
           @keydown="form.onKeydown($event)"
         >
+          <!-- Name -->
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label text-md-right">Name</label>
+            <div class="col-md-7">
+              <input
+                v-model="form.name"
+                :class="{ 'is-invalid': form.errors.has('name') }"
+                class="form-control"
+                type="text"
+                name="name"
+              >
+              <has-error
+                :form="form"
+                field="name"
+              />
+            </div>
+          </div>
           <!-- Email -->
           <div class="form-group row">
             <label class="col-md-3 col-form-label text-md-right">Email</label>
@@ -60,47 +77,50 @@
 
 <script>
 import Form from 'vform'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
 
   data: () => ({
     title: 'Register user',
+    name: 'ricoto',
     email: 'carlos@carlos.com',
     password: 'carloscarlos',
     form: new Form({
-      email: 'carlos@carlos.com',
-      password: 'carloscarlos'
+      name: 'Carlos',
+      email: 'asasda@sdsfdgtrs.casdac',
+      password: '1234543645dc'
     })
   }),
 
   methods: {
     async register () {
-      axios.post('/api/register', {
-        email: this.email,
-        password: this.password
-      })
-        .then(response => {
-          console.log('TCL: register -> response', response)
-        })
-        .catch(e => {
-          console.log('TCL: register -> e', e)
-        })
-      // try {
-      //   // Register the user.
-      //   const { data } = await this.form.post('/api/register')
+      // axios.post('/api/register', {
+      //   email: this.email,
+      //   password: this.password
+      // })
+      //   .then(response => {
+      //     console.log('TCL: register -> response', response)
+      //   })
+      //   .catch(e => {
+      //     console.log('TCL: register -> e', e)
+      //   })
+      try {
+        // Register the user.
+        await this.form.post('/api/register')
+          .then(({ data }) => { console.log(data) })
 
-      //   // Must verify email fist.
-      //   if (data.status) {
-      //   // Redirect home.
-      //   // this.$router.push({ name: 'home' })
-      //   } else {
-      //     const dataw = await this.form.post('/api/login')
-      //     console.log('TCL: register -> token', dataw)
-      //   }
-      // } catch (e) {
-      //   console.log('TCL: register -> e', e)
-      // }
+        // Must verify email fist.
+        // if (data.status) {
+        // // Redirect home.
+        // // this.$router.push({ name: 'home' })
+        // } else {
+        //   const dataw = await this.form.post('/api/login')
+        //   console.log('TCL: register -> token', dataw)
+        // }
+      } catch (e) {
+        console.log('TCL: register -> e', e)
+      }
     }
   }
 }
