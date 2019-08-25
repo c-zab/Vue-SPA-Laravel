@@ -17,7 +17,7 @@ export default {
     {
       path: '/register',
       name: 'register',
-      component: page('Register.vue')
+      component: page('auth/register.vue')
     },
     {
       path: '*',
