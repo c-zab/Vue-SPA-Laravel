@@ -13,7 +13,7 @@ export default {
     {
       path: '/login',
       name: 'login',
-      component: page('Login.vue')
+      component: page('auth/login.vue')
     },
     {
       path: '/register',

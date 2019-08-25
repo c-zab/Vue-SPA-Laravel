@@ -1,13 +1,22 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-success">
     <div class="container">
-      <router-link
-        to="/"
-        class="navbar-brand"
-      >
-        File Management
-      </router-link>
-
+      <template v-if="userId == 0">
+        <router-link
+          to="/"
+          class="navbar-brand"
+        >
+          File Management
+        </router-link>
+      </template>
+      <template v-else>
+        <router-link
+          to="home"
+          class="navbar-brand"
+        >
+          File Management
+        </router-link>
+      </template>
       <button
         class="navbar-toggler"
         type="button"

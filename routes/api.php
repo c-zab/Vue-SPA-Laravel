@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => 'guest:api'], function () {
 	Route::post('register', 'API\UserController@store');
+	Route::post('login', 'API\UserController@login');
 });

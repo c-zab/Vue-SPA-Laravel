@@ -47,7 +47,11 @@ class UserController extends Controller
 		}
 
 		public function login(){
-			return;
+			$user = auth()->attempt(request(['email','password']));
+			if ($user) {
+				return auth()->user()->id;
+			}
+			return 'NotFound';
 		}
 
     /**

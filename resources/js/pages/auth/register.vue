@@ -78,7 +78,6 @@ export default {
     async register () {
       try {
         const { data } = await this.form.post('/api/register')
-        console.log('TCL: register -> data', data)
         Event.$emit('register-user', data)
         // Redirect home.
         this.$router.push({ name: 'home' })
