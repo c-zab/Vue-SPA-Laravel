@@ -60,27 +60,47 @@
 
 <script>
 import Form from 'vform'
+import axios from 'axios'
 
 export default {
 
   data: () => ({
     title: 'Register user',
+    email: 'carlos@carlos.com',
+    password: 'carloscarlos',
     form: new Form({
-      email: '',
-      password: ''
+      email: 'carlos@carlos.com',
+      password: 'carloscarlos'
     })
   }),
 
   methods: {
     async register () {
-      // Register the user.
-      const { data } = await this.form.post('/api/register')
+      axios.post('/api/register', {
+        email: this.email,
+        password: this.password
+      })
+        .then(response => {
+          console.log('TCL: register -> response', response)
+        })
+        .catch(e => {
+          console.log('TCL: register -> e', e)
+        })
+      // try {
+      //   // Register the user.
+      //   const { data } = await this.form.post('/api/register')
 
-      // Must verify email fist.
-      if (!data.status) {
-        // Redirect home.
-        this.$router.push({ name: 'home' })
-      }
+      //   // Must verify email fist.
+      //   if (data.status) {
+      //   // Redirect home.
+      //   // this.$router.push({ name: 'home' })
+      //   } else {
+      //     const dataw = await this.form.post('/api/login')
+      //     console.log('TCL: register -> token', dataw)
+      //   }
+      // } catch (e) {
+      //   console.log('TCL: register -> e', e)
+      // }
     }
   }
 }

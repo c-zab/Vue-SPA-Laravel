@@ -3,11 +3,12 @@ function page (path) {
 }
 
 export default {
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: page('Home.vue')
+      name: 'Welcome',
+      component: page('Welcome.vue')
     },
     {
       path: '/login',
