@@ -29,21 +29,26 @@ class UserController extends Controller
     public function store(Request $request)
     {
 				$this->validate($request,array(
-					'name' => 'required|string|max:255',
-					'email' => 'required|string|max:255|email',
+					'email' => 'required|email|unique:users,email',
 					'password' => 'required|string|min:6'
 				));
 
-				$user = new User();
-				$user->name = $request->name;
-				$user->email = $request->email;
-				$user->password = Hash::make($request->password);
+				$user = User::create([
+					'email' => $request->email,
+					'password' => Hash::make($request->password)]);
 
-				// $user->save();
+				$user->save();
 
+				//Loging to implement
 
-				return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
-    }
+				// auth()->login($user);
+
+				return $user->id;
+		}
+
+		public function login(){
+			return;
+		}
 
     /**
      * Display the specified resource.

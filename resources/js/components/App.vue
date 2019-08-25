@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <navbar />
+    <navbar
+      :user-id="userId"
+    />
 
     <div class="container mt-4">
       <slot>
-        <router-view />
+        <router-view :user-id="userId" />
       </slot>
     </div>
   </div>
@@ -12,6 +14,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data: () => ({ userId: 1 }),
+  created () {
+    Event.$on('register-user', (data) => {
+      this.userId = data
+    })
+  },
+  methods: {
+    registeredUser (id) {
+      this.userId = id
+    }
+  }
 }
 </script>

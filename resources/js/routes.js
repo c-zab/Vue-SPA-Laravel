@@ -7,7 +7,7 @@ export default {
   routes: [
     {
       path: '/',
-      name: 'Welcome',
+      name: 'welcome',
       component: page('Welcome.vue')
     },
     {
@@ -24,6 +24,26 @@ export default {
       path: '/home',
       name: 'home',
       component: page('Home.vue')
+    },
+    {
+      path: '/file',
+      name: 'file',
+      component: page('file/files.vue')
+    },
+    {
+      path: '/file/create',
+      name: 'file.create',
+      component: page('file/create.vue')
+    },
+    {
+      path: '/file/update',
+      name: 'file.update',
+      component: page('file/update.vue')
+    },
+    {
+      path: '/file/delete',
+      name: 'file.delete',
+      component: page('file/delete.vue')
     },
     {
       path: '*',

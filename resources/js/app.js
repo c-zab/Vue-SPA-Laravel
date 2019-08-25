@@ -7,11 +7,12 @@ import '~/plugins'
 import '~/components'
 
 Vue.use(VueRouter)
+window.Event = new Vue()
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router: new VueRouter(routes),
   components: { App },
-  template: '<App/>'
+  template: '<App />'
 })
