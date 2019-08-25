@@ -1,28 +1,27 @@
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import NotFound from './pages/NotFound'
+function page (path) {
+  return () => import(/* webpackChunkName: '' */ `~/pages/${path}`)
+}
 
 export default {
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: page('Home.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: page('Login.vue')
     },
     {
       path: '/register',
       name: 'register',
-      component: Register
+      component: page('Register.vue')
     },
     {
       path: '*',
-      component: NotFound
+      component: page('NotFound.vue')
     }
   ]
 }

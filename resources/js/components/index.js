@@ -1,3 +1,8 @@
 import Vue from 'vue'
+import Navbar from './Navbar'
 
-Vue.component('navbar', require('./Navbar.vue').default)
+[
+  Navbar
+].forEach(Component => {
+  Vue.component(Component.name, Component)
+})

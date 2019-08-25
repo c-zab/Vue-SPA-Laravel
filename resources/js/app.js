@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from './routes'
-import App from './components/App'
+import routes from '~/routes'
+import App from '~/components/App'
 
-import './plugins'
-import './components'
+import '~/plugins'
+import '~/components'
 
 Vue.use(VueRouter)
 
