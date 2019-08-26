@@ -15,7 +15,7 @@
 <script>
 export default {
   name: 'App',
-  data: () => ({ userId: 1 }),
+  data: () => ({ userId: 0 }),
   created () {
     Event.$on('register-user', (data) => {
       this.userId = data
