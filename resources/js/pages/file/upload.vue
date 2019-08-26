@@ -50,7 +50,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'Update',
+  name: 'Create',
   props: {
     userId: {
       type: Number,
@@ -59,7 +59,7 @@ export default {
     }
   },
   data: () => ({
-    title: 'Update File',
+    title: 'Add File',
     file: '',
     isReady: false
   }),

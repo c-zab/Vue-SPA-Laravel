@@ -21,3 +21,6 @@ Route::group(['middleware' => 'guest:api'], function () {
 	Route::post('register', 'API\UserController@store');
 	Route::post('login', 'API\UserController@login');
 });
+
+// Get all the notes
+Route::get('/files', 'API\FileController@index');

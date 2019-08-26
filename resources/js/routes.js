@@ -26,14 +26,14 @@ export default {
       component: page('Home.vue')
     },
     {
-      path: '/file',
-      name: 'file',
+      path: '/files',
+      name: 'files',
       component: page('file/files.vue')
     },
     {
-      path: '/file/create',
-      name: 'file.create',
-      component: page('file/create.vue')
+      path: '/file/upload',
+      name: 'file.upload',
+      component: page('file/upload.vue')
     },
     {
       path: '/file/update',

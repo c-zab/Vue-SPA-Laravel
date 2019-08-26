@@ -82,8 +82,8 @@ export default {
   data: () => ({
     title: 'Login',
     form: new Form({
-      email: 'asasda@sdsfdgtrs.casdac',
-      password: '1234543645dc'
+      email: '',
+      password: ''
     }),
     notFound: false
   }),
@@ -92,7 +92,6 @@ export default {
     async login () {
       try {
         const { data } = await this.form.post('/api/login')
-        console.log('TCL: login -> data', data)
         if (data !== 'NotFound') {
           Event.$emit('login-user', data)
           this.$router.push({ name: 'home' })

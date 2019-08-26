@@ -11,7 +11,7 @@
       </template>
       <template v-else>
         <router-link
-          to="home"
+          to="/home"
           class="navbar-brand"
         >
           File Management
@@ -58,11 +58,11 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <router-link
-                :to="{ name: 'login'}"
+                :to="{ name: 'files'}"
                 class="nav-link"
                 active-class="active"
               >
-                Dashboard
+                Files
               </router-link>
             </li>
             <li

@@ -3,7 +3,7 @@ const path = require('path')
 
 mix.js('resources/js/app.js', 'public/dist/js')
   .sass('resources/sass/app.scss', 'public/dist/css')
-  .browserSync('http://127.0.0.1:8000/') // Carlos [to delete later]
+  .browserSync('http://127.0.0.1:8000/') // Carlos [for development]
   .sourceMaps()
 
 mix.webpackConfig({

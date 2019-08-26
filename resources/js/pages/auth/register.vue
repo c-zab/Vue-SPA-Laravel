@@ -69,8 +69,8 @@ export default {
   data: () => ({
     title: 'Register user',
     form: new Form({
-      email: 'asasda@sdsfdgtrs.casdac',
-      password: '1234543645dc'
+      email: '',
+      password: ''
     })
   }),
 
