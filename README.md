@@ -47,10 +47,17 @@ php artisan migrate
 
 **Build app**
 
+###### for development
 ```
-npm run dev
+npm run watch
 php artisan serve
+```
 
+###### for production
+
+```
+npm run prod
+php artisan serve
 ```
 
 The application should now be available at http://localhost or http://127.0.0.1:8000/ depending on your configuration.
